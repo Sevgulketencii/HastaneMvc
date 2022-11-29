@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+
+@model List<Iletisim>
+
+
+<h4 style="text-align:center">GELENLER</h4>
+<hr />
+
+
+
+
+
+<div class="container">
+    <div class="ibox-content align-items-xl-stretch , table table ">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>AD-SOYAD</th>
+                    <th>MAİL</th>
+                    <th>TELEFON</th>
+                    <th>AÇIKLAMA</th>
+                    <th>OKUNMA BİLGİSİ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>@item.IletisimAdi</td>
+                        <td>@item.IletisimPosta</td>
+                        <td>@item.IletisimTel</td>
+                        <td>@item.IletisimAciklama</td>
+                        @if (item.Okundu == 0)
+                        {
+                            <td class="label-danger">OKUNMADI</td>
+                        }
+                        else
+                        {
+                            <td class="label-primary">OKUNDU</td>
+                        }
+                        <td><a asp-controller="Admin" asp-action="IletisimDetay" asp-route-id=@item.IletisimId class="btn btn-outline-accent">OKU</a></td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

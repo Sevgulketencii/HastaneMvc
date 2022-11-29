@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+@model Randevu
+
+<div class="ibox ">
+    <div class="ibox-content text-center p-md">
+
+        <div>
+
+
+            <label><strong>Adı</strong></label><br />
+            @Html.TextBoxFor(x => x.HastaAdi, new { @class = "form-control" })<br />
+
+            <label><strong>Soyadı</strong></label><br />
+            @Html.TextAreaFor(x => x.HastaSoyad, new { @class = "form-control", @rows = "6" })<br />
+
+            <label><strong>Hastalık Birim</strong></label><br />
+            @Html.TextBoxFor(x => x.HastalikAlan, new { @class = "form-control" })<br />
+
+            <label><strong>Tarih</strong></label><br />
+            @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })<br />
+
+            <label><strong>Hasta Mail</strong></label><br />
+            @Html.TextBoxFor(x => x.HastaMail, new { @class = "form-control" })<br />
+
+            <label><strong>Hasta Açıklama</strong></label><br />
+            @Html.TextBoxFor(x => x.HastaAciklama, new { @class = "form-control" })<br />
+
+
+            <a asp-controller="Admin" asp-action="Randevu" class="btn btn-warning">Geri DÖN</a>
+
+        </div>
+
+
+    </div>
+</div>

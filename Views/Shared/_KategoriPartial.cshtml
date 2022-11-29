@@ -1,0 +1,16 @@
+﻿@{ 
+    Layout = null;
+}
+@model HastaneMvc.Models.Sınıflar.SonHaberler
+
+<div class="sidebar-block">
+    <h3 class="sidebar-title">Kategoriler</h3>
+    <ul class="categories">
+        @foreach (var item in Model.Kategori)
+        {
+            <li><a href="#">@item.Etiket <span>0</span></a></li>
+        }
+
+
+    </ul>
+</div>

@@ -1,0 +1,33 @@
+﻿@{ 
+    Layout = "AdminLayout";
+}
+@model Doktor 
+<div class="ibox ">
+    <div class="ibox-content text-center p-md">
+    
+        <div>
+            <img src=@Model.DoktorImgUrl style="width:200px" /><br /><br />
+            <form action="/Admin/DoktorGüncelle" method="post">
+                <input type="hidden" name="DoktorId" value=@ViewBag.id />
+                <label><strong>Doktor Adı</strong></label><br />
+                @Html.TextBoxFor(x => x.DoktorAdi,new {@class="form-control"});<br />
+                <label><strong>Doktor Soyadı</strong></label><br />
+                @Html.TextBoxFor(x => x.DoktorSoyadi,new {@class="form-control"});<br />
+                <label><strong>Doktor İmg URL</strong></label><br />
+                @Html.TextBoxFor(x => x.DoktorImgUrl,new {@class="form-control"});<br />
+                <label><strong>Doktor Yetki</strong></label><br />
+                @Html.TextBoxFor(x => x.DoktorYetki,new {@class="form-control"});<br />
+                <label><strong>Doktor Alanı</strong></label><br />
+                @Html.TextBoxFor(x => x.DoktorAlani,new {@class="form-control"});<br />
+                <label><strong>Doktor Fc Link</strong></label><br />
+                @Html.TextBoxFor(x => x.DoktorFcLink,new {@class="form-control"});<br />
+                <label><strong>Doktor Tw Link</strong></label><br />
+                @Html.TextBoxFor(x => x.DoktorTwLink,new {@class="form-control"});<br />
+                <button action="submit" class="btn btn-success">Güncelle</button>
+                <a asp-controller="Admin" asp-action="Doktorlar" class="btn btn-warning">Geri DÖN</a>
+            </form>
+        </div>
+    
+    
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+
+@model HastaneMvc.Models.Sınıflar.SonHaberler
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+           
+        </head>
+        <body>
+            <div class="sidebar-block">
+                <h3 class="sidebar-title">Son Haberler</h3>
+                @foreach (var item in Model.SonHaber)
+                {
+                    <div class="blog-item">
+                        <a class="post-thumb" asp-action="HaberDetay" asp-controller="Haberler" asp-route-id=@item.HaberId>
+                            <img src=@item.HaberImgUrl alt="">
+                        </a>
+                        <div class="content">
+                            <h5 class="post-title"><a href="#">@item.HaberBaslik</a></h5>
+                            <div class="meta">
+                                <a href="#"><span class="mai-calendar"></span> @item.Tarih.ToShortDateString()</a>
+                                <a href="#"><span class="mai-person"></span></a>
+                                <a href="#"><span class="mai-chatbubbles"></span> 19</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </body>
+    </html>
+
+
+
+

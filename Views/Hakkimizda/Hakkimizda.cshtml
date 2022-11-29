@@ -1,0 +1,99 @@
+﻿@model HastaneMvc.Models.Sınıflar.AnasayfaDoktor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+    <div class="page-banner overlay-dark bg-image" style="background-image: url(/image/bg_image_1.jpg);">
+        <div class="banner-section">
+            <div class="container text-center wow fadeInUp">
+
+                <h1 class="font-weight-normal"><strong>HAKKIMIZDA</strong></h1>
+            </div> <!-- .container -->
+        </div> <!-- .banner-section -->
+    </div> <!-- .page-banner -->
+
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 py-3 wow zoomIn">
+                        <div class="card-service">
+                            <div class="circle-shape bg-secondary text-white">
+                                <span class="mai-bed"></span>
+                            </div>
+                            <p style="text-align:center"><span>Evdeki Konforunuz</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-3 wow zoomIn">
+                        <div class="card-service">
+                            <div class="circle-shape bg-primary text-white">
+                                <span class="mai-logo-uber"></span>
+                            </div>
+                            <p style="text-align:center">Onaylı Temizlik</pstyle="text-align:center">
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-3 wow zoomIn">
+                        <div class="card-service">
+                            <div class="circle-shape bg-accent text-white">
+                                <span class="mai-logo-cc-visa"></span>
+                            </div>
+                            <p style="text-align:center">Uygun Fiyatlar</pstyle="text-align:center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+        <div class="page-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    @foreach (var item in Model.Hakkimizda)
+                    {
+
+                        <div >
+                            <h1 style="text-align:center"><strong>@item.HaberBaslik</strong></h1><br />
+                            <div >
+                                <p>@item.HaberAciklama</p>
+                            </div>
+                        </div>
+                    }
+
+
+
+
+                    <div class="col-lg-10 mt-5">
+                        <h1 class="text-center mb-5 wow fadeInUp">ÖDÜLLÜ DOKTORLARIMIZ</h1>
+                        <div class="row justify-content-center">
+                            @foreach (var item in Model.Doktor)
+                            {
+                                <div class="col-md-6 col-lg-4 wow zoomIn">
+                                    <div class="card-doctor">
+                                        <div class="header">
+                                            <img src=@item.DoktorImgUrl alt="">
+                                            <div class="meta">
+                                                <a href="#"><span class="mai-call"></span></a>
+                                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <p class="text-xl mb-0">@item.DoktorAdi</p>
+                                            <span class="text-sm text-grey">@item.DoktorAlani</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+</body>
+</html>

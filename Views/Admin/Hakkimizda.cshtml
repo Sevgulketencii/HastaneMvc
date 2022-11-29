@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+@model List<Hakkında>
+<br />
+
+<div class="ibox ">
+    <div class="ibox-content text-center p-md">
+        <center><h4 class="m-b-xxs">HAKKIMIZDA KONTROL</h4></center><hr />
+        <br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Hakkımızda ID</th>
+                    <th>Hakkımızda Başlık</th>
+                    <th>Hakkımızda Açıklama</th>
+                    <th>Güncelle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr >
+                        <td>@item.HakkımızdaId</td>
+                        <td>@item.HaberBaslik</td>
+                        <td>@item.HaberAciklama</td>
+                        <td ><a asp-action="HakkimizdaGüncelle" asp-controller="Admin" asp-route-id=@item.HakkımızdaId class="btn btn-warning"><strong>Güncelle</strong></a>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    </div>

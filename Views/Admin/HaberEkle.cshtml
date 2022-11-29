@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+@model Haberler
+<br />
+<br />
+<div class="ibox ">
+    <div class="ibox-content text-center p-md">
+        <form action="/Admin/HaberEkle" method="post">
+            <div>
+                <label><strong>Haber Başlık</strong></label><br />
+                @Html.TextBoxFor(x => x.HaberBaslik, new { @class = "form-control" }) <br />
+
+                <label><strong>Haber Açıklama</strong></label><br />
+                @Html.TextBoxFor(x => x.HaberAciklama, new { @class = "form-control" }) <br />
+
+                <label><strong>Haber Resim Url</strong></label><br />
+                @Html.TextBoxFor(x => x.HaberImgUrl, new { @class = "form-control" }) <br />
+
+                <label><strong>Tarih</strong></label><br />
+                @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" }) <br />
+
+                <button action="submit" class="btn btn-success"> EKLE</button>
+                <a asp-controller="Admin" asp-action="Haberler" class="btn btn-warning">Geri DÖN</a>
+            </div>
+        </form>
+
+    </div>
+</div>

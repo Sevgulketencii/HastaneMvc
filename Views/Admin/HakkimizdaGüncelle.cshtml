@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+
+@model Hakkında
+<div>
+    <br />
+    <form action="/Admin/HakkimizdaGüncelle" method="post">
+        <label><b>Başlık</b></label><br />
+        <input type="hidden" name="HakkımızdaId" value=@ViewBag.id />
+        @Html.TextAreaFor(x => x.HaberBaslik, new { @class = "form-control" })
+        <br />
+        <label><b>Açıklama</b></label><br />
+        @Html.TextAreaFor(x => x.HaberAciklama, new { @class = "form-control", @rows = "15" })
+        <br />
+        <button action="submit" class="btn btn-warning"><strong>Güncelle</strong></button>
+    </form>
+
+</div>

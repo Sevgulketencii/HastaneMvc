@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+
+@model List<Randevu>
+
+
+    <h4 style="text-align:center">RANDEVU TALEPLERİ</h4>
+    <hr />
+
+    <div class="container">
+        <div class="ibox-content align-items-xl-stretch , table table ">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ADI</th>
+                        <th>SOYADI</th>
+                        <th>HASTALIK BİRİM</th>
+                        <th>TARİH</th>
+                        <th>HASTA MAİL</th>
+                        <th>HASTA AÇIKLAMA</th>
+                        <th>OKUNMA BİLGİSİ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                    <tr>
+                        <td>@item.HastaAdi</td>
+                        <td>@item.HastaSoyad</td>
+                        <td>@item.HastalikAlan</td>
+                        <td>@item.Tarih</td>
+                        <td>@item.HastaMail</td>
+                        <td>@item.HastaAciklama</td>
+                        @if (item.Bayrak == 0)
+                        {
+                        <td class="label-danger">OKUNMADI</td>
+                        }
+                        else
+                        {
+                        <td class="label-primary">OKUNDU</td>
+                        }
+                        <td><a asp-controller="Admin" asp-action="RandevuDetay" asp-route-id=@item.HastaId class="btn btn-outline-accent">OKU</a></td>
+                    </tr>
+
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>

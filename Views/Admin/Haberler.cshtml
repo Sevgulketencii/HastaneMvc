@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+@model List<Haberler>
+<br />
+
+
+<h4 style="text-align:center">HABERLER KONTROL</h4>
+<hr />
+
+<div class="container">
+    <div>
+        <table class="ibox-content align-items-xl-stretch , table table ">
+
+            <thead>
+                <tr>
+                    <th>Haber ID</th>
+                    <th>Haber Başlık</th>
+                    <th>Haber Açıklama</th>
+                    <th>Haber İmg</th>
+                    <th>Etiket</th>
+                    <th>Haber Tarih</th>
+
+                    <th>SİL</th>
+                    <th>GÜNCELLE</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.HaberId</td>
+                    <td>@item.HaberBaslik</td>
+                    <td>@item.HaberAciklama</td>
+                    <td>@item.HaberImgUrl</td>
+                    <td>@item.Etiket</td>
+                    <td>@item.Tarih.ToShortDateString()</td>
+                    <td><a class="btn btn-danger" asp-route-hid=@item.HaberId asp-action="HaberSil" asp-controller="Admin">Sil</a></td>
+                    <td><a asp-controller="Admin" asp-action="HaberGüncelle" asp-route-id=@item.HaberId class="btn btn-warning">Güncelle</a></td>
+
+                </tr>
+            }
+
+        </table>
+
+    </div>
+    <a asp-controller="Admin" asp-action="HaberEkle" class="btn btn-info">Ekle</a>
+</div>

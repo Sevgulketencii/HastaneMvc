@@ -1,0 +1,143 @@
+﻿
+@model HastaneMvc.Models.Sınıflar.DoktorYetki
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+
+
+    <div class="page-banner overlay-dark bg-image" style="background-image: url(/image/Emsey.jpg);">
+        <div class="banner-section">
+            <div class="container text-center wow fadeInUp">
+                <h1 class="font-weight-normal"><strong>DOKTORLARIMIZ</strong></h1>
+            </div> <!-- .container -->
+        </div> <!-- .banner-section -->
+    </div> <!-- .page-banner -->
+
+
+
+    <div class="page-section bg-light">
+        <div class="container">
+            <h2 style="text-align:center"><strong>BAŞ HEKİM</strong></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <div class="row">
+
+                        @foreach (var item in Model.Bashekim)
+                        {
+
+                            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                                <div class="card-doctor" style="position:center">
+                                    <div class="header">
+                                        <img src="@item.DoktorImgUrl" alt="">
+                                        <div class="meta">
+                                            <a href="#"><span class="mai-call"></span></a>
+                                            <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <p class="text-xl mb-0">@item.DoktorAdi @item.DoktorSoyadi</p>
+                                        <span class="text-sm text-grey">@item.DoktorAlani</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+
+
+
+
+
+
+
+    <div class="page-section bg-light">
+        <div class="container">
+            <h2 style="text-align:center"><strong>UZMANLAR</strong></h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <div class="row">
+
+                        @foreach (var item in Model.Uzman)
+                        {
+
+                            <div class="col-md-6 col-lg-4 py-3 wow zoomIn">
+                                <div class="card-doctor">
+                                    <div class="header">
+                                        <img src="@item.DoktorImgUrl" alt="">
+                                        <div class="meta">
+                                            <a href="#"><span class="mai-call"></span></a>
+                                            <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <p class="text-xl mb-0">@item.DoktorAdi @item.DoktorSoyadi</p>
+                                        <span class="text-sm text-grey">@item.DoktorAlani</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+
+
+    <div class="page-section bg-light"  >
+        <div class="container"   >
+            <h2 style="text-align:center"><strong>ASİSTANLAR</strong></h2>
+            <div class="row justify-content-center"  >
+                <div class="col-lg-10"   >
+
+                    <div class="row" >
+
+                        @foreach (var item in Model.Asistan)
+                        {
+
+                            <div class="col-md-6 col-lg-4 py-3 wow zoomIn" >
+                                <div class="card-doctor"   >
+                                    <div class="header"  >
+                                        <img src="@item.DoktorImgUrl" alt="" align="center">
+                                        <div class="meta">
+                                            <a href="#"><span class="mai-call"></span></a>
+                                            <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <p class="text-xl mb-0">@item.DoktorAdi @item.DoktorSoyadi</p>
+                                        <span class="text-sm text-grey">@item.DoktorAlani</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+
+
+
+
+</body>
+</html>

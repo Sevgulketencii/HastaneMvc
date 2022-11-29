@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+@model Haberler
+<div class="ibox ">
+    <div class="ibox-content text-center p-md">
+
+        <div>
+            <form action="#" method="post">
+              
+                <input type="hidden" name="HaberId" value=@ViewBag.hid />
+              
+                <label><strong>Haber Başlık</strong></label><br />
+                @Html.TextBoxFor(x => x.HaberBaslik, new { @class = "form-control" })<br />
+              
+                <label><strong>Haber Açıklama</strong></label><br />
+                @Html.TextAreaFor(x => x.HaberAciklama, new { @class = "form-control",@rows="6" })<br />
+             
+                <label><strong>Haber İmg URL</strong></label><br />
+                @Html.TextBoxFor(x => x.HaberImgUrl, new { @class = "form-control" })<br />
+
+                <button action="submit" class="btn btn-success">Güncelle</button>
+                <a asp-controller="Admin" asp-action="Haberler" class="btn btn-warning">Geri DÖN</a>
+            </form>
+        </div>
+
+
+    </div>
+</div>

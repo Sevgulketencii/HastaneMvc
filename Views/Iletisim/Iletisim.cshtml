@@ -1,0 +1,57 @@
+﻿@model List<Iletisim>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+
+    <div class="topbar">
+        <div class="container">
+            <div class="page-banner overlay-dark bg-image" style="background-image:url(/image/bg_image_1.jpg);">
+                <div class="banner-section">
+                    <div class="container text-center wow fadeInUp">
+
+                        <h1 class="font-weight-normal"><strong>İLETİŞİM</strong></h1>
+                    </div> <!-- .container -->
+                </div> <!-- .banner-section -->
+            </div> <!-- .page-banner -->
+
+            <div class="page-section">
+                <div class="container">
+                    <h1 class="text-center wow fadeInUp">Bizimle İletişime Geçin</h1>
+
+                    <form action="/Iletisim/Iletisim" method="post" class="contact-form mt-5">
+                        <div class="row mb-3">
+                            <div class="col-sm-6 py-2 wow fadeInLeft">
+                                <label for="fullName">Adınız</label>
+                                <input type="text" name="IletisimAdi" id="fullName" class="form-control" placeholder="Adınız..">
+                            </div>
+                            <div class="col-sm-6 py-2 wow fadeInRight">
+                                <label for="emailAddress">E-mail Adres</label>
+                                <input type="text" name="IletisimPosta" id="emailAddress" class="form-control" placeholder="Email adresiniz..">
+                            </div>
+                            <div class="col-12 py-2 wow fadeInUp">
+                                <label for="subject">Telefon</label>
+                                <input type="tel" name="IletisimTel" id="subject" class="form-control" placeholder="Konu Başlığı..">
+                            </div>
+                            <div class="col-12 py-2 wow fadeInUp">
+                                <label for="message">Mesajınız</label>
+                                <textarea id="message" name="IletisimAciklama" class="form-control" rows="8" placeholder="Mesajınız.."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary wow zoomIn">Mesajı Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div >
+       
+      
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿@model HastaneMvc.Models.Sınıflar.SonHaberler
+    <br />
+
+<div class="row">
+    <div class="col-lg-8">
+        <article class="blog-details">
+            @foreach (var item in Model.haberler)
+            {
+                <div class="post-thumb">
+                    <img src=@item.HaberImgUrl alt="">
+                </div>
+                <div class="post-meta">
+
+                    <span class="divider">|</span>
+                    <div class="post-date">
+                        <p>@item.Tarih.ToShortDateString()</p>
+                    </div>
+                    <span class="divider">|</span>
+                    <div>
+                        <p>@item.HaberBaslik</p>
+                    </div>
+                    <span class="divider">|</span>
+                    <div class="post-comment-count">
+                        <p>8 Comments</p>
+                    </div>
+                </div>
+                <h2 class="post-title h1">@item.HaberBaslik</h2>
+                <div class="post-content">
+                    <p class="divider">@item.HaberAciklama</p>
+                </div>
+                <div class="post-tags">
+                    <p class="post-tags">@item.Etiket</p>
+                </div>
+            }
+
+        </article> <!-- .blog-details -->
+
+        <div class="comment-form-wrap pt-5">
+            <h3 class="mb-5">Yorumlar</h3>
+            <form action="/Haberler/Yorum" method="post" class="">
+                <div class="form-row form-group">
+                    <input type="hidden" name="HaberId" value=@ViewBag.yorumid>
+                    <div class="col-md-6">
+                        <label for="name">Adınız</label>
+                        <input type="text" class="form-control" name="YorumAdi">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="YorumMail">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mesajınız</label>
+                    <textarea name="YorumAciklama" id="message" cols="30" rows="8" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Yorumu Gönder" class="btn btn-primary">
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="sidebar">
+
+            @Html.Partial("_KategoriPartial")
+
+            @Html.Partial("_SonHaberlerPartial")
+
+
+
+        </div>
+        <div>
+            <h3 class="sidebar-title">Yorumlar</h3>
+            @foreach (var item in Model.Yorumlar)
+            {
+                <div class="blog-item">
+                    <a class="post-thumb" href="">
+                        <img src="img/user.png" alt="">
+                    </a>
+                    <div class="content">
+                        <h5 class="post-title"><a href="#">@item.YorumAciklama</a></h5>
+                        <div class="meta">
+                            <a href="#"><span class="mai-calendar"></span> @item.YorumMail</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+  
+</div> <!-- .row -->
+
+    
+   
+
+
+

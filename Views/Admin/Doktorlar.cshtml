@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+@model List<Doktor>
+
+
+    <div class="ibox ">
+  
+            <h4 style="text-align:center">DOKTORLAR KONTROL</h4><hr />
+            <div>
+                <table class="ibox-content align-items-xl-stretch , table table-active" >
+
+                    <thead>
+                        <tr>
+                            <th>Doktor ID</th>
+                            <th>Doktor ADI</th>
+                            <th>Doktor SOYADI</th>
+                            <th>Doktor İmg</th>
+                            <th>Doktor ÜNVAN</th>
+                            <th>Doktor ALANI</th>
+                            <th>Doktor FcLink</th>
+                            <th>Doktor TwLink</th>
+                            <th>SİL</th>
+                            <th>GÜNCELLE</th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.DoktorId</td>
+                            <td>@item.DoktorAdi</td>
+                            <td>@item.DoktorSoyadi</td>
+                            <td>@item.DoktorImgUrl</td>
+                            <td>@item.DoktorYetki</td>
+                            <td>@item.DoktorAlani</td>
+                            <td>@item.DoktorFcLink</td>
+                            <td>@item.DoktorTwLink</td>
+                            <td><a class="btn btn-danger" asp-route-id=@item.DoktorId asp-action="DoktorSil" asp-controller="Admin">Sil</a></td>
+                            <td><a asp-controller="Admin" asp-action="DoktorGüncelle" asp-route-id=@item.DoktorId class="btn btn-warning">Güncelle</a></td>
+
+                        </tr>
+                    }
+
+                </table>
+                <a asp-controller="Admin" asp-action="DoktorEkle" class="btn btn-info">Ekle</a>
+            </div>
+        </div>
+   
+

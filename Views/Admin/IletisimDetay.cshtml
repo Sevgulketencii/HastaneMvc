@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "AdminLayout";
+}
+@model Iletisim
+<div class="ibox ">
+    <div class="ibox-content text-center p-md">
+
+        <div>
+                
+
+                <label><strong>Adı</strong></label><br />
+                @Html.TextBoxFor(x => x.IletisimAdi, new { @class = "form-control" })<br />
+
+                <label><strong>İletisim Posta</strong></label><br />
+                @Html.TextAreaFor(x => x.IletisimPosta, new { @class = "form-control", @rows = "6" })<br />
+
+                <label><strong>Telefon Numarası</strong></label><br />
+                @Html.TextBoxFor(x => x.IletisimTel, new { @class = "form-control" })<br />
+
+                <label><strong>Açıklama</strong></label><br />
+                @Html.TextBoxFor(x => x.IletisimAciklama, new { @class = "form-control" })<br />
+
+
+                <a asp-controller="Admin" asp-action="Iletisim" class="btn btn-warning">Geri DÖN</a>
+ 
+        </div>
+
+
+    </div>
+</div>
